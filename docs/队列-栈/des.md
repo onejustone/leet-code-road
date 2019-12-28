@@ -1,0 +1,63 @@
+# 队列-栈-链表
+
+## 队列
+
+队列是一种特效的线性结构，它只允许在队列的头部（head）进行删除操作，这称为 "出队"，而在队尾（tail）进行插入操作，这称为"入队"。当队列中没有元素时即（head === tail），称为空队列。队列的一个重要原则是先进先出（First In First Out, FIFO。
+
+`c` 中队列的实现：
+
+```c
+struct queue {
+    int data[100]; // 队列主体，用来存储内容
+    init head; // 队首
+    init tail; // 队尾
+}
+```
+
+`javascript` 中队列的实现：
+
+```javascript
+const queue = [];
+
+// 入队
+queue.unshift('1');
+queue.unshift('2');
+
+// 出队
+queue.pop();
+```
+
+## 栈
+
+栈是一种后进先出的数据结构。栈规定只能在一端进行插入和删除操作。
+
+`c` 中栈的实现：
+
+```c
+struct stack {
+    int data[100]; // 队列主体，用来存储内容
+    init top; // 头指针
+}
+
+// 入栈
+stack[++top] = element;
+
+// 出栈
+firstElement = stack.top;
+top--;
+```
+
+`javascript` 中队列的实现：
+
+```javascript
+const stack = [];
+
+// 入栈
+stack.unshift('1');
+stack.unshift('2');
+
+// 出栈
+stack.shift();
+```
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>onejustone-primary-notes</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="/static/docsify/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="/static/docsify-copy-code/styles.css"> -->
+</head>
+
+<body>
+<div id="app"></div>
+<script >
+  window.$docsify = {
+    name: 'my-docs',
+    // homepage: 'docs/index.md',
+    loadSidebar: true,
+    subMaxLevel: 2,
+    maxLevel: 4,
+    // maxAge: 600000,
+    themeColor: '#0C75EF',
+    search: "auto"
+    // plugins: [
+    //   window.DocsifyCopyCodePlugin.init()
+    // ]
+  }
+</script>
+<script src="/static/docsify/lib/docsify.min.js"></script>
+<script src="/static/docsify/lib/plugins/search.min.js"></script>
+ <script src="/static/docsify-copy-code"></script>
+<script src="/static/docsify/lib/plugins/zoom-image.js"></script>
+<script src="/static/prismjs/components/prism-bash.min.js"></script>
+<script src="/static/prismjs/components/prism-sass.min.js"></script>
+<script src="/static/prismjs/components/prism-json.min.js"></script>
+<script src="/static/prismjs/components/prism-pug.min.js"></script>
+<script src="/static/prismjs/components/prism-typescript.min.js"></script>
+
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
+
+</body>
+
+</html>

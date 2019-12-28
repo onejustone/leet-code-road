@@ -1,0 +1,24 @@
+{
+  "name": "leet-code-road",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./auto_generate_docsify_sidebar.js",
+    "code": "ts-node-dev -r tsconfig-paths/register ./code/index.ts",
+    "test": "jest",
+    "testWithCoverage": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.4",
+    "util": "^0.12.1"
+  }
+}

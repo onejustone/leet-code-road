@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "es6",
+        "module": "commonjs",
+        // 支持 import .json 文件
+        "resolveJsonModule": true,
+        // 允许在 common.js 模块中使用 es6 模块的导入规则
+        "esModuleInterop": true,
+        // 用实验性的装饰器特性
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "lib": [
+            "dom",
+            "es7"
+        ],
+        // ts-node 不支持 paths 路径解析 https://github.com/TypeStrong/ts-node/issues/138，
+        // 需要配合使用 tsconfig-paths https://github.com/dividab/tsconfig-paths
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./code/*"]
+        },
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "noResolve": false,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "allowJs": false,
+        "declaration": true,
+        // 自定义的 types 目录
+        "typeRoots": ["./node_modules/@types"]
+    },
+    "skipLibCheck": true,
+    "include": [
+        "**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "jest",
+        "tslint:latest",
+        "tslint-config-prettier"
+    ],
+    "compileOnSave": false,
+    "awesomeTypescriptLoaderOptions": {
+        "forkChecker": true,
+        "useWebpackText": true
+    }
+}
