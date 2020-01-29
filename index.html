@@ -12,37 +12,37 @@
 </head>
 
 <body>
-<div id="app"></div>
-<script >
-  window.$docsify = {
-    name: 'my-docs',
-    // homepage: 'docs/index.md',
-    loadSidebar: true,
-    subMaxLevel: 2,
-    maxLevel: 4,
-    // maxAge: 600000,
-    themeColor: '#0C75EF',
-    search: "auto"
-    // plugins: [
-    //   window.DocsifyCopyCodePlugin.init()
-    // ]
-  }
-</script>
-<script src="/static/docsify/lib/docsify.min.js"></script>
-<script src="/static/docsify/lib/plugins/search.min.js"></script>
- <script src="/static/docsify-copy-code"></script>
-<script src="/static/docsify/lib/plugins/zoom-image.js"></script>
-<script src="/static/prismjs/components/prism-bash.min.js"></script>
-<script src="/static/prismjs/components/prism-sass.min.js"></script>
-<script src="/static/prismjs/components/prism-json.min.js"></script>
-<script src="/static/prismjs/components/prism-pug.min.js"></script>
-<script src="/static/prismjs/components/prism-typescript.min.js"></script>
+  <div id="app"></div>
+  <script >
+      window.$docsify = {
+        name: 'my-docs',
+        homepage: './README.md',
+        loadSidebar: true,
+        maxLevel: 2,
+        subMaxLevel: 0,
+        // maxAge: 600000,
+        themeColor: '#0C75EF',
+        search: "auto"
+        // plugins: [
+        //   window.DocsifyCopyCodePlugin.init()
+        // ]
+      }
+  </script>
+  <script src="/static/docsify/lib/docsify.min.js"></script>
+  <script src="/static/docsify/lib/plugins/search.min.js"></script>
+  <!-- <script src="/static/docsify-copy-code"></script> -->
+  <script src="/static/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="/static/prismjs/components/prism-bash.min.js"></script>
+  <script src="/static/prismjs/components/prism-php.min.js"></script>
+  <script src="/static/prismjs/components/prism-sass.min.js"></script>
+  <script src="/static/prismjs/components/prism-json.min.js"></script>
+  <script src="/static/prismjs/components/prism-pug.min.js"></script>
 
-<script>
-  if (typeof navigator.serviceWorker !== 'undefined') {
-    navigator.serviceWorker.register('sw.js')
-  }
-</script>
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
 
 </body>
 

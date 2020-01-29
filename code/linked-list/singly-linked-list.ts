@@ -1,7 +1,7 @@
 // 单向链表
 export type Consumer<C> = (accept: C) => void;
 
-interface IINode<T> {
+export interface IINode<T> {
     value: T | undefined;
     next?: IINode<T>;
 }
@@ -24,6 +24,27 @@ export default class SinglyLinkedList<T> {
 
     private forgeNode(value: T): IINode<T> {
         return { value, next: undefined };
+    }
+
+    // 时间复杂度 O(n - reverseIndex - 1)
+    public removeNthFromEnd (reversePos: number) {
+        let targetNode = this.head;
+        const size = this.size();
+        const index = size - reversePos;
+
+        for (let i = 1; i < index; i ++) {
+            targetNode = targetNode?.next;
+        }
+
+        if (targetNode && targetNode.next) {
+            if (this.head === targetNode) {
+                this.head = this.head.next
+            } else {
+                targetNode.next = targetNode.next.next
+            }
+        }
+
+        return this.head;
     }
 
     // 时间复杂度 O(n)

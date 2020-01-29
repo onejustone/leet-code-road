@@ -1,15 +1,20 @@
-// import LRUCache from './LRU-Cache/hash-linked-list';
-import LRUCache from './146-LRU-Cache/hash-map';
+import SinglyLinkedList from './linked-list/singly-linked-list';
+import { stdOutInfo } from './utils';
 
-// import { stdOutInfo } from './utils';
+const singlyLinkedList = new SinglyLinkedList();
+const nums = [4,1,3,5,2];
+singlyLinkedList.fromArray(nums);
+stdOutInfo(singlyLinkedList.getHead());
+stdOutInfo('fromArray');
 
-const cache = new LRUCache(2);
-cache.put(2, 1);
-cache.put(2, 2);
-console.log(cache.get(2)) ;       // 返回  1
-cache.put(1, 1);    // 该操作会使得密钥 2 作废
-cache.put(4, 1);    // 该操作会使得密钥 1 作废
-console.log(cache.get(2));       // 返回 -1 (未找到)
+singlyLinkedList.removeNthFromEnd(2);
+stdOutInfo('removeNthFromEnd 2');
+stdOutInfo(singlyLinkedList.getHead());
 
-const arr1 = ["LRUCache","put","put","get","put","get","put","get","get","get"];
-const arr2 = [[2],[1,1],[2,2],[1],[3,3],[2],[4,4],[1],[3],[4]];
+singlyLinkedList.removeNthFromEnd(1);
+stdOutInfo('removeNthFromEnd 1');
+stdOutInfo(singlyLinkedList.getHead());
+
+stdOutInfo('removeNthFromEnd 3');
+singlyLinkedList.removeNthFromEnd(3);
+stdOutInfo(singlyLinkedList.getHead());

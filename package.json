@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node ./auto_generate_docsify_sidebar.js",
+    "doc": "docsify serve ./",
+    "sidebar": "node ./auto_generate_docsify_sidebar.js",
     "code": "ts-node-dev -r tsconfig-paths/register ./code/index.ts",
     "test": "jest",
     "testWithCoverage": "jest --coverage"
