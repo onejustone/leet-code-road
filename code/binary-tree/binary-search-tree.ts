@@ -74,14 +74,14 @@ export default class BinarySearchTree {
         while (queue.length !== 0) {
             const tmpNode = queue.shift();
 
-            callback(this.data);
+            callback(tmpNode!.data);
 
-            if (this._left) {
-                tmpNode.push(this._left);
+            if (tmpNode!._left) {
+                queue.push(tmpNode!._left);
             }
 
-            if (this._right) {
-                tmpNode.push(this._right);
+            if (tmpNode!._right) {
+                queue.push(tmpNode!._right);
             }
         }
     }

@@ -1,13 +1,15 @@
 import BinarySearchTree from './binary-search-tree';
 
-const inOrderTraversal = (bst: BinarySearchTree) => (callback: (data: number) => void) => bst.InOrderTraversal(callback);
 const preOrderTraversal = (bst: BinarySearchTree) => (callback: (data: number) => void) => bst.PreOrderTraversal(callback);
+const inOrderTraversal = (bst: BinarySearchTree) => (callback: (data: number) => void) => bst.InOrderTraversal(callback);
 const postOrderTraversal = (bst: BinarySearchTree) => (callback: (data: number) => void) => bst.PostOrderTraversal(callback);
+const bfsTraversal = (bst: BinarySearchTree) => (callback: (data: number) => void) => bst.BFSQueue(callback);
 
 const traversalTypes = new Map();
 traversalTypes.set('inOrderTraversal', inOrderTraversal);
 traversalTypes.set('preOrderTraversal', preOrderTraversal);
 traversalTypes.set('postOrderTraversal', postOrderTraversal);
+traversalTypes.set('bfsTraversal', bfsTraversal);
 
 const recordAllData = (bst: BinarySearchTree, traversalType: string = 'inOrderTraversal'): number [] => {
     const out: number[] = [];
@@ -82,6 +84,15 @@ describe('BinarySearchTree', () => {
     });
 
     it('should iterate over complex tree inOrderTraversal', () => {
+        /**
+         *    4
+         *   |  \
+         *   2   5
+         *  | \   \
+         *  1  3   6
+         *          \
+         *           7
+         */
         const four = new BinarySearchTree(4);
         four.insert(2);
         four.insert(1);
@@ -106,6 +117,15 @@ describe('BinarySearchTree', () => {
     });
 
     it('should iterate over complex tree postOrderTraversal', () => {
+        /**
+         *    4
+         *   |  \
+         *   2   5
+         *  | \   \
+         *  1  3   6
+         *          \
+         *           7
+         */
         const four = new BinarySearchTree(4);
         four.insert(2);
         four.insert(1);
@@ -115,5 +135,26 @@ describe('BinarySearchTree', () => {
         four.insert(7);
 
         expect(recordAllData(four, 'postOrderTraversal')).toEqual([1, 3, 2, 7, 6, 5, 4])
+    });
+
+    it('should iterate over complex tree bfsTraversal', () => {
+        /**
+         *    4
+         *   |  \
+         *   2   5
+         *  | \   \
+         *  1  3   6
+         *          \
+         *           7
+         */
+        const four = new BinarySearchTree(4);
+        four.insert(2);
+        four.insert(1);
+        four.insert(3);
+        four.insert(5);
+        four.insert(6);
+        four.insert(7);
+
+        expect(recordAllData(four, 'bfsTraversal')).toEqual([4, 2, 5, 1, 3, 6 ,7])
     });
 });
