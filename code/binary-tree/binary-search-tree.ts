@@ -1,5 +1,5 @@
 export default class BinarySearchTree {
-    private readonly _data: number;
+    private _data: number;
     private _left?: BinarySearchTree;
     private _right?: BinarySearchTree;
 
@@ -9,6 +9,10 @@ export default class BinarySearchTree {
 
     public get data (): number {
         return this._data!
+    }
+
+    public set data (value) {
+        this._data = value
     }
 
     /**
@@ -90,8 +94,16 @@ export default class BinarySearchTree {
         return this._left!
     }
 
+    public set left (tree: BinarySearchTree) {
+        this._left = tree;
+    }
+
     public get right (): BinarySearchTree {
         return this._right!
+    }
+
+    public set right (tree: BinarySearchTree) {
+        this._right = tree;
     }
 
     public insert (value: number): BinarySearchTree {
