@@ -1,10 +1,10 @@
 import BinarySearchTree from '../binary-tree/binary-search-tree'
-import { bfsQueue } from '../binary-tree/helper'
+import helper from '../binary-tree/helper'
 import { recursiveMergeTrees } from './merge-trees'
 
-const recordAllData = (bst: BinarySearchTree, traversalType: string = 'inOrderTraversal'): number [] => {
+const recordAllData = (bst: BinarySearchTree): number [] => {
     const out: number[] = [];
-    bfsQueue(bst, (data) => out.push(data));
+    helper.bfsQueueTraversal(bst, (data) => out.push(data));
     return out;
 };
 

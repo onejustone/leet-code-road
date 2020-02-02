@@ -4,23 +4,23 @@ import TreeNode from './binary-search-tree'
  * DFS 递归 中序遍历: left => root => right
  */
 export function recursiveInOrderTraversal(tree: TreeNode, callback: (data: any) => void) {
-   if (!tree) {
-       return callback(null);
-   }
+    if (!tree) {
+        return callback(null);
+    }
 
-   if (tree.left) {
-       recursiveInOrderTraversal(tree.left, callback);
-   }
+    if (tree.left) {
+        recursiveInOrderTraversal(tree.left, callback);
+    }
 
-   callback(tree.data);
+    callback(tree.data);
 
-   if (tree.right) {
-       recursiveInOrderTraversal(tree.right, callback)
-   }
+    if (tree.right) {
+        recursiveInOrderTraversal(tree.right, callback)
+    }
 }
 
 /**
- * DFS 迭代 中序遍历
+ * DFS 迭代 中序遍历: left => root => right
  * @param root
  * @param callback
  */
@@ -50,7 +50,7 @@ export function iteratorInOrderTraversal(root: TreeNode, callback: (data: any) =
 /**
  * DFS 递归 前序遍历 root => left => right
  */
-export function recursivePreOrderTraversal(tree: TreeNode, callback:(data: any) => void) {
+export function recursivePreOrderTraversal(tree: TreeNode, callback: (data: any) => void) {
     if (!tree) {
         return callback(null);
     }
@@ -91,7 +91,7 @@ export function recursivePostOrderTraversal(tree: TreeNode, callback: (data: any
  * @param root
  * @param callback
  */
-export function bfsQueue(root: TreeNode, callback: (data: any) => void) {
+export function bfsQueueTraversal(root: TreeNode, callback: (data: any) => void) {
     if (!root) return;
 
     const queue: TreeNode[] = [];
@@ -112,3 +112,12 @@ export function bfsQueue(root: TreeNode, callback: (data: any) => void) {
         }
     }
 }
+
+export  default {
+    recursiveInOrderTraversal,
+    recursivePreOrderTraversal,
+    recursivePostOrderTraversal,
+    iteratorInOrderTraversal,
+    bfsQueueTraversal
+}
+

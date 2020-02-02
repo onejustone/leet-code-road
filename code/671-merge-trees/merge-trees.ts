@@ -1,7 +1,6 @@
-import BinarySearchTree from '../binary-tree/binary-search-tree'
+import TreeNode from '../binary-tree/binary-search-tree'
 
-export function recursiveMergeTrees(tree1: BinarySearchTree, tree2: BinarySearchTree) {
-    if (!tree1) return tree2;
+export function recursiveMergeTrees(tree1: TreeNode, tree2: TreeNode) { if (!tree1) return tree2;
     if (!tree2) return tree1;
 
     tree1.left = recursiveMergeTrees(tree1.left, tree2.left);
