@@ -1,10 +1,11 @@
 export interface TreeNode {
-   key: string | number;
-   left?: TreeNode;
-   right?: TreeNode;
+    key: string | number;
+    data?: any;
+    left?: TreeNode;
+    right?: TreeNode;
 }
 
-export default class BinaryTree {
+export default class AbstractTree {
     public insert (node: TreeNode) {
 
     }
