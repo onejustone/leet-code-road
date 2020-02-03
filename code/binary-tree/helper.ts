@@ -94,19 +94,28 @@ export function recursivePostOrderTraversal(tree: TreeNode, callback: (data: any
 export function bfsQueueTraversal(root: TreeNode, callback: (data: any) => void) {
     if (!root) return;
 
+    let maxDepth = 0;
+
+    // 使用一个队列缓存树中的节点
     const queue: TreeNode[] = [];
 
+    // 将根节点推入队列
     queue.push(root);
+    maxDepth += 1;
 
     while (queue.length !== 0) {
+        // 取出队列中的第一节点
         const tmpNode = queue.shift();
 
+        // 对结果进行保存
         callback(tmpNode!.data);
 
+        // 如果左子树存在则将左子树推入队列
         if (tmpNode!.left) {
             queue.push(tmpNode!.left);
         }
 
+        // 如果右节点存在则将右节点推入队列
         if (tmpNode!.right) {
             queue.push(tmpNode!.right);
         }
