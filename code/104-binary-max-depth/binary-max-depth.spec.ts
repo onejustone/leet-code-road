@@ -1,5 +1,5 @@
 import BinarySearchTree from '../binary-tree/binary-search-tree'
-import { binaryMaxDepthRecursive, binaryMaxDepthIterator } from './binayr-max-depth';
+import { binaryMaxDepthRecursive, binaryMaxDepthIteratorDFS } from './binary-max-depth';
 
 describe('computed binary max depth', () => {
     /**
@@ -28,7 +28,7 @@ describe('computed binary max depth', () => {
     });
 
     it('computed binary max depth iterator', () => {
-        const maxDepth = binaryMaxDepthIterator(tree);
+        const maxDepth = binaryMaxDepthIteratorDFS(tree);
         expect(maxDepth).toBe(5);
     })
 });

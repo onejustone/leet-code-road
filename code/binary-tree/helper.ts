@@ -90,36 +90,55 @@ export function recursivePostOrderTraversal(tree: TreeNode, callback: (data: any
  * BFS 广度优先遍历（层次优先遍历）队列实现
  * @param root
  * @param callback
+ * @param flat
  */
-export function bfsQueueTraversal(root: TreeNode, callback: (data: any) => void) {
+export function bfsQueueTraversal(root: TreeNode, callback: (data: any) => void, flat : boolean= true) {
     if (!root) return;
 
-    let maxDepth = 0;
-
-    // 使用一个队列缓存树中的节点
+    // 使用一个队列缓存没一层的节点
     const queue: TreeNode[] = [];
 
-    // 将根节点推入队列
+    const levels: Array<Array<number>> = [];
+
+    // 将根节点推入队列，也是第一层
     queue.push(root);
-    maxDepth += 1;
+
+    // 记录当前层级
+    let level = 0;
 
     while (queue.length !== 0) {
-        // 取出队列中的第一节点
-        const tmpNode = queue.shift();
+        // queue 的长度即是当前层中的元素个数
+        const currentLevelCount = queue.length;
 
-        // 对结果进行保存
-        callback(tmpNode!.data);
+        // 初始化当前层
+        levels[level] = [];
 
-        // 如果左子树存在则将左子树推入队列
-        if (tmpNode!.left) {
-            queue.push(tmpNode!.left);
+        // 依次遍历当前层的元素
+        for (let i = 0; i < currentLevelCount; i ++) {
+            const node = queue.shift()!;
+            levels[level].push(node.data);
+
+            if (node.left) {
+                queue.push(node.left);
+            }
+
+            if (node.right) {
+                queue.push(node.right);
+            }
         }
 
-        // 如果右节点存在则将右节点推入队列
-        if (tmpNode!.right) {
-            queue.push(tmpNode!.right);
-        }
+        level ++;
     }
+
+    const flatArray = <T>(arr: Array<Array<T>>) => arr.reduce((acc, cur): Array<T> => {
+        if (cur instanceof Array) {
+            return [...acc, ...cur];
+        }
+
+        return [...acc, cur]
+    });
+
+    flat ? callback(flatArray(levels)): callback(levels);
 }
 
 export  default {

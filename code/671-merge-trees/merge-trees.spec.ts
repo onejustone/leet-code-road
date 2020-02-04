@@ -4,7 +4,7 @@ import { recursiveMergeTrees } from './merge-trees'
 
 const recordAllData = (bst: BinarySearchTree): number [] => {
     const out: number[] = [];
-    helper.bfsQueueTraversal(bst, (data) => out.push(data));
+    helper.bfsQueueTraversal(bst, (data) => out.push(...data));
     return out;
 };
 

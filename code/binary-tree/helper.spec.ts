@@ -49,7 +49,8 @@ describe('binary tree helper utils', () => {
 
     it('should iterate over complex tree bfsTraversal', () => {
         const result: number [] = [];
-        treeHelper.bfsQueueTraversal(tree, (data: number) => result.push(data));
+
+        treeHelper.bfsQueueTraversal(tree, (data: []) => result.push(...data));
 
         expect(result).toEqual([4, 2, 5, 1, 3, 6 ,7])
     });

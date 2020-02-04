@@ -1,13 +1,13 @@
-import BinarySearchTree from '../binary-tree/binary-search-tree'
+import TreeNode from '../binary-tree/binary-search-tree'
 
 // 给定一个二叉树，找出其最大深度。
 // 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
 
 /**
- * 方案一：使用 DFS 进行递归遍历
+ * 方案一：递归，进行 DFS 遍历
  * @param root
  */
-export function binaryMaxDepthRecursive  (root: BinarySearchTree): number {
+export function binaryMaxDepthRecursive  (root: TreeNode): number {
    if (!root) return 0;
 
    const leftHeight = binaryMaxDepthRecursive(root.left);
@@ -18,18 +18,18 @@ export function binaryMaxDepthRecursive  (root: BinarySearchTree): number {
 }
 
 /**
- * 方案二：使用迭代，使用 栈实现深度优先遍历
+ * 方案二：迭代，使用栈进行 DFS 遍历
  * @param root
  */
 interface StackNode {
-   node: BinarySearchTree;
+   node: TreeNode;
    deep: number
 }
 
-export function binaryMaxDepthIterator(root: BinarySearchTree) {
+export function binaryMaxDepthIteratorDFS(root: TreeNode) {
     const stack: StackNode [] = [];
 
-    let curr: BinarySearchTree = root;
+    let curr: TreeNode = root;
     let maxDepth = 0;
     let deep = 0;
 
@@ -59,4 +59,39 @@ export function binaryMaxDepthIterator(root: BinarySearchTree) {
     }
 
     return maxDepth;
+}
+
+export interface QueueElement {
+   node: TreeNode;
+   deep: number;
+}
+
+/**
+ *
+ * @param root
+ */
+export function binaryMaxDepthIteratorBFS(root: TreeNode) {
+    const queue: QueueElement[] = [];
+    let maxDepth: number = 0;
+    let deep = 0;
+
+    queue.push({ node: root, deep: ++deep });
+
+    while (queue.length !== 0) {
+        const queueElement: QueueElement = queue.shift()!;
+        const tmpNode = queueElement.node;
+        let _deep: number = queueElement.deep;
+
+        if (maxDepth < deep) {
+            maxDepth = deep
+        }
+
+        if (tmpNode.left) {
+            queue.push({ node: tmpNode.left, deep: ++_deep});
+        }
+
+        if (tmpNode.right) {
+            queue.push({ node: tmpNode.right, deep: ++_deep });
+        }
+    }
 }
