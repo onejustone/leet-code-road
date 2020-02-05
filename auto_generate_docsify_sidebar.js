@@ -40,7 +40,8 @@ const excludeItems = [
     '.git',
     '.vscode',
     'static',
-    'code'
+    'code',
+    'xmind'
 ];
 
 function checkIsExcludeDir(dirPath) {

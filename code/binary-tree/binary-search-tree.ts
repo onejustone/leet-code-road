@@ -35,7 +35,7 @@ export default class BinarySearchTree {
         return value <= this._data ? this.insertLeft(value) : this.insertRight(value);
     }
 
-    private insertLeft (value: number): BinarySearchTree {
+    public insertLeft (value: number): BinarySearchTree {
         if (!this._left) {
             this._left = new BinarySearchTree(value)
         } else {

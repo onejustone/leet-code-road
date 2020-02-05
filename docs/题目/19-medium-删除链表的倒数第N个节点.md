@@ -27,5 +27,5 @@
 
 ### 完整代码
 
-[完整代码](../../code/linked-list/singly-linked-list.spec.ts ':include :type=code typescript')
+[完整代码](/code/linked-list/singly-linked-list.spec.ts)
 

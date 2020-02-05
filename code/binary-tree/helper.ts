@@ -92,7 +92,7 @@ export function recursivePostOrderTraversal(tree: TreeNode, callback: (data: any
  * @param callback
  * @param flat
  */
-export function bfsQueueTraversal(root: TreeNode, callback: (data: any) => void, flat : boolean= true) {
+export function bfsQueueTraversal(root: TreeNode | null, callback: (data: any) => void, flat : boolean= true) {
     if (!root) return;
 
     // 使用一个队列缓存没一层的节点

@@ -67,31 +67,9 @@ export interface QueueElement {
 }
 
 /**
- *
+ * 方案三：迭代，使用队列 bsf 宽度遍历
  * @param root
  */
 export function binaryMaxDepthIteratorBFS(root: TreeNode) {
-    const queue: QueueElement[] = [];
-    let maxDepth: number = 0;
-    let deep = 0;
 
-    queue.push({ node: root, deep: ++deep });
-
-    while (queue.length !== 0) {
-        const queueElement: QueueElement = queue.shift()!;
-        const tmpNode = queueElement.node;
-        let _deep: number = queueElement.deep;
-
-        if (maxDepth < deep) {
-            maxDepth = deep
-        }
-
-        if (tmpNode.left) {
-            queue.push({ node: tmpNode.left, deep: ++_deep});
-        }
-
-        if (tmpNode.right) {
-            queue.push({ node: tmpNode.right, deep: ++_deep });
-        }
-    }
 }
