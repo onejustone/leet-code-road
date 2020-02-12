@@ -24,20 +24,20 @@ describe('invert binary tree', () => {
      *  7
      */
 
-    // it('should recursive invert binary tree', () => {
-    //     const tree = new TreeNode(4);
-    //     tree.insert(2);
-    //     tree.insert(1);
-    //     tree.insert(3);
-    //     tree.insert(5);
-    //     tree.insert(6);
-    //     tree.insert(7);
-    //
-    //     const invertTree = recursiveInvertBinaryTree(tree);
-    //     const invertTreeData = recordTreeDataFromBFS(invertTree);
-    //
-    //     expect(invertTreeData).toEqual([4, 5, 2, 6, 3, 1, 7])
-    // });
+    it('should recursive invert binary tree', () => {
+        const tree = new TreeNode(4);
+        tree.insert(2);
+        tree.insert(1);
+        tree.insert(3);
+        tree.insert(5);
+        tree.insert(6);
+        tree.insert(7);
+
+        const invertTree = recursiveInvertBinaryTree(tree);
+        const invertTreeData = recordTreeDataFromBFS(invertTree);
+
+        expect(invertTreeData).toEqual([4, 5, 2, 6, 3, 1, 7])
+    });
 
     // it('should iterator invert binary tree', () => {
     //     const invertTree = iteratorInvertBinaryTree(tree);

@@ -4,11 +4,14 @@
 
 大多数情况下 javascript 开发关心的是 "数据的逻辑结构" 而非 "数据的存储结构"，似乎 "链表" 跟 javascript 开发没什么关系。但是，"链表" 在一些情况下能有效提升代码的性能，特别是在H5游戏或者大数据场景中。
 
-其实绝大多数情况下 javascript 的数组都可以实现链表的工作，并且它提供了一系列成熟的 APIs (unshift/pop/shift/push...)，但是若果我们需要频繁的向数组进行插入和删除操作，由于 `unshift/pop/shift/push` 的时间富足的都是 O(n)，所以这种情况下 "链表" 肯能是更好的选择。
+其实绝大多数情况下 javascript 的数组都可以实现链表的工作，并且它提供了一系列成熟的 APIs (unshift/pop/shift/push...)，但是若果我们需要频繁的向数组进行插入和删除操作，由于 `unshift/pop/shift/push` 的时间复杂度的都是 O(n)，所以这种情况下 "链表" 肯能是更好的选择。
+
+[单链表](./单链表.md)
+[双链表](./双链表.md)
 
 ## ref
 
-[js创建一条通用链表](https://aotu.io/notes/2017/10/13/make-a-chain-class/index.html)
+[js创建一条通用链表](https://app.yinxiang.com/shard/s22/nl/4690995/6b7a52c8-c571-4947-9d49-8263bd9bd2e4)
 
 [generic-linkedlist-with-typescript](https://itnext.io/generic-linkedlist-with-typescript-7bc8a14b63b6)
 
